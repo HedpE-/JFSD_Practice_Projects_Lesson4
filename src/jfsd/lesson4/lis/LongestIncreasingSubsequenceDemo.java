@@ -54,10 +54,10 @@ public class LongestIncreasingSubsequenceDemo {
 			try
 			{
 				//int[] arr = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
-				System.out.println("Please enter an unsorted sequence of Integer numbers separated by coma ',' (ex.: 2,10,5,8) or 'qQ' to quit:");
-				String input = sc.nextLine();
+				System.out.println("Please enter an unsorted sequence of Integer numbers separated by coma ',' (ex.: 2,10,5,8) or type 'q' or 'Q' to quit:");
+				String input = sc.nextLine().trim();
 
-				if(input.length() == 1 && input.toUpperCase() == "Q")
+				if(input.length() == 1 && input.toUpperCase().equals("Q") )
 					break;
 
 				input = input.replaceAll("\\s", "");
@@ -72,7 +72,8 @@ public class LongestIncreasingSubsequenceDemo {
 			}
 			catch(Exception e)
 			{
-				System.out.println("\nError while parsing the input, please try again.");
+				System.out.println("\nError while parsing the input, please try again. "+e.getClass().getName());
+				numArr = null;
 			}
 		}
 
